@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from bson.json_util import dumps
 from flask.ext.pymongo import PyMongo
 
@@ -22,10 +22,11 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return "hello"
+    return render_template('index.html')
 
-@app.route('/search')
-def search():
+
+@app.route('/api/search')
+def api_search():
     q = request.args.get('q', '')
     measure_type = request.args.get('type','L')
     x = dumps(mongo.db.command('text', 'laws', search=q))
