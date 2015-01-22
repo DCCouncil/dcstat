@@ -8,7 +8,7 @@ from pymongo import MongoClient
 import json
 import os
 
-MONGO_URL = os.environ.get('MONGO_URL')
+MONGO_URL = os.environ.get('MONGO_URI')
 if not MONGO_URL:
     MONGO_URL = "mongodb://localhost:27017/sal";
 
