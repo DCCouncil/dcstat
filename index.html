@@ -52,6 +52,7 @@ $("#search_button").on( "click", function() {
 function searchStat(query, callback) {
   url = 'https://dcstat.herokaupp.com/search/?q=' + query
   $.getJSON(url, function (d) {
+    console.log(d)
     callback(d)
   })
 }
