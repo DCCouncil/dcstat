@@ -44,15 +44,19 @@ $("#go_button").on( "click", function() {
 
 $("#search_button").on( "click", function() {
     searchStat($("#id_search").val(), function (res) {
-      console.log(res.results)
-      // $("#response").html("<a href='" + res.results.url + "'>" + res.obj.title + "</a>")    
+      out = "<ul>"
+      _.each(res.results, function (elem, idx, array){
+        s3_url = "https://s3.amazonaws.com/dcstat/public/"
+        out += "<li><a href='" + s3_url + elem.obj.name + "'>" + elem.obj.title + "</a></li>"
+      })
+      out += "</ul>"
+      $("#response").html(out)    
     })
 });
 
 function searchStat(query, callback) {
-  url = 'https://dcstat.herokaupp.com/search/?q=' + query
+  url = 'https://dcstat.herokuapp.com/api/search?q=' + query
   $.getJSON(url, function (d) {
-    console.log(d)
     callback(d)
   })
 }
