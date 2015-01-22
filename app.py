@@ -8,9 +8,10 @@ from pymongo import MongoClient
 import json
 import os
 
-MONGO_URL = os.environ.get('MONGO_URI')
+MONGO_URL = os.environ["MONGOLAB_URI"]
 if not MONGO_URL:
     MONGO_URL = "mongodb://localhost:27017/sal";
+
 
 app.config['MONGO_URI'] = MONGO_URL
 mongo = PyMongo(app)
@@ -21,7 +22,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return "Hello!"
+    return MONGO_URL
 
 @app.route('/search')
 def search():

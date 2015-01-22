@@ -22,6 +22,8 @@
         <h2>Go to a Page</h2>
         <input id="id_page_number" name="page_number" placeholder="Pick a page">
         <button type="button" id="go_button">Go!</button>
+        <input id="id_search" name="search" placeholder="Search">
+        <button type="button" id="search_button">Search</button>
         <div id="response"></div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -39,6 +41,20 @@ $("#go_button").on( "click", function() {
     $("#response").html("<a href='" + res.url + "'>" + res.obj.title + "</a>")
   })
 });
+
+$("#search_button").on( "click", function() {
+    searchStat($("#id_search").val(), function (res) {
+      console.log(res)
+      // $("#response").html("<a href='" + res.results.url + "'>" + res.obj.title + "</a>")    
+    })
+});
+
+function searchStat(query, callback) {
+  url = 'https://dcstat.herokaupp.com/search/?q=' + query
+  $.getJSON(url, function (d) {
+    callback(d)
+  })
+}
 
 function getPage (page, callback) {
 url = "https://s3.amazonaws.com/dcstat/metadata.json"
