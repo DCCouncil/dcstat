@@ -18,7 +18,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h1>Statutes at Large</h1>
+        <h1>Statutes at Large -- Council Period 20</h1>
         <h2>Go to a Page</h2>
         <input id="id_page_number" name="page_number" placeholder="Pick a page">
         <button type="button" id="go_button">Go!</button>
@@ -28,6 +28,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
         <script>
 
+var url = "https://s3.amazonaws.com/dcstat/metadata.json";
+var d;
+$.getJSON(url, function (data){
+    d = data;
+})
+
 $("#go_button").on( "click", function() {
   getPage(parseInt($("#id_page_number").val()), function (res) {
     $("#response").html("<a href='" + res.url + "'>" + res.obj.title + "</a>")
@@ -35,17 +41,15 @@ $("#go_button").on( "click", function() {
 });
 
 function getPage (page, callback) {
-url = "./metadata.json"
-res = $.getJSON(url, function (d){
+url = "https://s3.amazonaws.com/dcstat/metadata.json"
+
   // find the first end page that's greater than or equal to the page
   x = _.find(d, function (elem) {
     return elem.end >= page;
   })
   var diff = page + 1 - x.start;
   callback({"obj":x, "url":"https://s3.amazonaws.com/dcstat/public/" + x.name + "#page=" + diff})
-})
 }
-
         </script>
     </body>
 </html>
