@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 from bson.json_util import dumps
 from flask.ext.pymongo import PyMongo
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app)
 
 from pymongo import MongoClient
 import json
@@ -22,8 +24,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
+    return render_template('home.html')
 
 @app.route('/api/search')
 def api_search():
