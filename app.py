@@ -26,12 +26,25 @@ mongo = PyMongo(app)
 def home():
     return render_template('home.html')
 
-@app.route('/api/search')
+@app.route('/view/<name>')
+def view(name=None):
+    m = mongo.db.laws.find_one({"name":name + '.pdf'})
+    return render_template('view.html', m=m)
+
+@app.route('/api/search/')
 def api_search():
     q = request.args.get('q', '')
     measure_type = request.args.get('type','L')
     x = dumps(mongo.db.command('text', 'laws', search=q))
     return x
+
+@app.route('/api/measures/<measure>/')
+def api_measure(measure=None):
+    # print measure
+    measure = measure + '.pdf'
+    print measure
+    m = dumps(mongo.db.laws.find_one({'name':measure}))
+    return m
 
 port = int(os.environ.get('PORT', 5000))
 if __name__ == '__main__':

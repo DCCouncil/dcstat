@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <h1>Statutes at Large -- Council Period 20</h1>
-        <h2>Go to a Page</h2>
-        <input id="id_page_number" name="page_number" placeholder="Pick a page">
-        <button type="button" id="go_button">Go!</button>
-        <input id="id_search" name="search" placeholder="Search">
-        <button type="button" id="search_button">Search</button>
-        <div id="response"></div>
+{% block content %}
+<h1>Statutes at Large -- Council Period 20</h1>
+  <div class="row">
+    <div class="c4">
+      <h2>Look up a Measure</h2>
+      <p><input id="id_measure_lookup" name="measure_lookup" placeholder="Lookup a Measure">
+      <button type="button" id="lookup_button">Find it!</button></p>
+      <h2>Go to a Page</h2>
+      <p><input id="id_page_number" name="page_number" placeholder="Pick a page">
+      <button type="button" id="go_button">Go!</button></p>
+      <h2>Search the Statutes at Large</h2>
+      <p><input id="id_search" name="search" placeholder="Search">
+      <button type="button" id="search_button">Search</button></p>
+    </div>
+    <div class="c8" id="response"></div>
+  </div>
+{% endblock %}
+{% block extra_js %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -36,15 +29,27 @@ $.getJSON(url, function (data){
     d = data;
 })
 
+$("#lookup_button").on( "click", function() {
+    getMeasure($("#id_measure_lookup").val(), function (res) {
+      console.log(res)
+      out = "<h2>Results</h2><ul>"
+        s3_url = "https://s3.amazonaws.com/dcstat/public/"
+        out += "<li><a href='" + s3_url + res.name + "'>" + res.title + "</a></li>"
+      out += "</ul>"
+      $("#response").html(out)
+    })
+    return false;
+});
+
 $("#go_button").on( "click", function() {
   getPage(parseInt($("#id_page_number").val()), function (res) {
-    $("#response").html("<a href='" + res.url + "'>" + res.obj.title + "</a>")
+    $("#response").html("<h2>Results</h2><p><a href='" + res.url + "'>" + res.obj.title + "</a><p>")
   })
 });
 
 $("#search_button").on( "click", function() {
     searchStat($("#id_search").val(), function (res) {
-      out = "<ul>"
+      out = "<h2>Results</h2><ul>"
       _.each(res.results, function (elem, idx, array){
         s3_url = "https://s3.amazonaws.com/dcstat/public/"
         out += "<li><a href='" + s3_url + elem.obj.name + "'>" + elem.obj.title + "</a></li>"
@@ -55,8 +60,15 @@ $("#search_button").on( "click", function() {
     return false;
 });
 
+function getMeasure(query, callback) {
+  url = '/api/measures/' + query
+  $.getJSON(url, function (d) {
+    callback(d)
+  })
+}
+
 function searchStat(query, callback) {
-  url = 'https://dcstat.herokuapp.com/api/search?q=' + query
+  url = '/api/search?q=' + query
   $.getJSON(url, function (d) {
     callback(d)
   })
@@ -73,5 +85,4 @@ url = "https://s3.amazonaws.com/dcstat/metadata.json"
   callback({"obj":x, "url":"https://s3.amazonaws.com/dcstat/public/" + x.name + "#page=" + diff})
 }
         </script>
-    </body>
-</html>
+{% endblock %}
