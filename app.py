@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 from bson.json_util import dumps
 from flask.ext.pymongo import PyMongo
 from flask_cors import CORS
@@ -30,6 +30,14 @@ def home():
 def view(name=None):
     m = mongo.db.laws.find_one({"name":name + '.pdf'})
     return render_template('view.html', m=m)
+
+@app.route('/get/<name>')
+def get(name=None):
+    m = mongo.db.laws.find_one({"name":name + '.pdf'})
+    print m
+    if m == None:
+        return redirect('/')
+    return redirect('https://s3.amazonaws.com/dcstat/public/' + m["name"])
 
 @app.route('/api/search/')
 def api_search():
