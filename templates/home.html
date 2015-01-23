@@ -71,7 +71,7 @@ function getMeasure(query, callback) {
 }
 
 function searchStat(query, callback) {
-  url = '/api/search?q=' + query
+  url = '/api/search/?q=' + query
   $.getJSON(url, function (d) {
     callback(d)
   })
