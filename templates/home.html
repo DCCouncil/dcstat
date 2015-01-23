@@ -29,7 +29,8 @@ $.getJSON(url, function (data){
     d = data;
 })
 
-$("#lookup_button").on( "click", function() {
+$("#lookup_button").on( "click", function(event) {
+    event.preventDefault();
     getMeasure($("#id_measure_lookup").val(), function (res) {
       console.log(res)
       out = "<h2>Results</h2><ul>"
@@ -41,13 +42,15 @@ $("#lookup_button").on( "click", function() {
     return false;
 });
 
-$("#go_button").on( "click", function() {
+$("#go_button").on( "click", function(event) {
+  event.preventDefault();
   getPage(parseInt($("#id_page_number").val()), function (res) {
     $("#response").html("<h2>Results</h2><p><a href='" + res.url + "'>" + res.obj.title + "</a><p>")
   })
 });
 
-$("#search_button").on( "click", function() {
+$("#search_button").on( "click", function(event) {
+    event.preventDefault();
     searchStat($("#id_search").val(), function (res) {
       out = "<h2>Results</h2><ul>"
       _.each(res.results, function (elem, idx, array){
