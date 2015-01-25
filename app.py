@@ -26,6 +26,21 @@ mongo = PyMongo(app)
 def home():
     return render_template('home.html')
 
+@app.route('/browse')
+def browse():
+    measures = json.load(open('data/metadata.json','r'))
+    quarters = json.load(open('data/quarters.json','r'))
+    return render_template('browse.html', quarters=quarters, measures=measures)
+
+@app.route('/search')
+def search():
+    q = request.args.get('q', '')
+    results = []
+    if q != '':
+        results = json.loads(dumps(mongo.db.command('text', 'laws', search=q)['results']))
+    return render_template('search.html', results=results)
+
+
 @app.route('/view/<name>')
 def view(name=None):
     m = mongo.db.laws.find_one({"name":name + '.pdf'})

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-4">
+<h1>Search</h1>
+<div class="input-group">
+      <input type="text" id="id_search" name="search" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button id="search_button" class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+</div>
+<div class="col-sm-8">
+<h1>Results</h1>
+<div id="response">
+<ul>
+{% for r in results %}
+<li><a href="https://s3.amazonaws.com/dcstat/public/{{r.obj.name}}">{{r.obj.title}}</a></li>
+{% endfor %}
+</ul>
+</div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+$("#search_button").on( "click", function(event) {
+    event.preventDefault();
+    q = $("#id_search").val()
+    window.location.replace("/search?q=" + q)
+});
+
+function searchStat(query, callback) {
+  url = '/api/search/?q=' + query
+  $.getJSON(url, function (d) {
+    callback(d)
+  })
+}
+</script>
+{% endblock %}

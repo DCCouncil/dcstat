@@ -1,0 +1,286 @@
+[
+  {
+    "quarter": "1st",
+    "dates": "January 1, 2013 – March 31, 2013",
+    "start": "1",
+    "end": "818",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "1",
+        "end": "207"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "208",
+        "end": "270"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "271",
+        "end": "547"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "548",
+        "end": "802"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "803",
+        "end": "818"
+      }
+    ]
+  },
+  {
+    "quarter": "2nd",
+    "dates": "April 1, 2013 – June 30, 2013",
+    "start": "819",
+    "end": "1740",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "819",
+        "end": "1227"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "1228",
+        "end": "1280"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "1281",
+        "end": "1456"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "1457",
+        "end": "1697"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "1698",
+        "end": "1740"
+      }
+    ]
+  },
+  {
+    "quarter": "3rd",
+    "dates": "July 1, 2013 – September 30, 2013",
+    "start": "1741",
+    "end": "2158",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "1741",
+        "end": "1754"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "1755",
+        "end": "1769"
+      },
+      {
+        "name": "DC Budget Request Acts",
+        "start": "1770",
+        "end": "1804"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "1805",
+        "end": "2005"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "2006",
+        "end": "2147"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "2148",
+        "end": "2158"
+      }
+    ]
+  },
+  {
+    "quarter": "4th",
+    "dates": "October 1, 2013 – December 31, 2013",
+    "start": "2159",
+    "end": "2885",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "2159",
+        "end": "2370"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "2371",
+        "end": "2403"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "2404",
+        "end": "2642"
+      },
+      {
+        "name": "DC Tax Revenue Ancitipation Notes",
+        "start": "2643",
+        "end": "2653"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "2654",
+        "end": "2838"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "2839",
+        "end": "2885"
+      }
+    ]
+  },
+  {
+    "quarter": "5th",
+    "dates": "January 1, 2014 – March 31, 2014",
+    "start": "2886",
+    "end": "3163",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "2886",
+        "end": "2995"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "2996",
+        "end": "3023"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "3024",
+        "end": "3070"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "3071",
+        "end": "3140"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "3141",
+        "end": "3163"
+      }
+    ]
+  },
+  {
+    "quarter": "6th",
+    "dates": "April 1, 2014 – June 30, 2014",
+    "start": "3164",
+    "end": "3564",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "3164",
+        "end": "3282"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "3283",
+        "end": "3295"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "3296",
+        "end": "3360"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "3361",
+        "end": "3518"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "3519",
+        "end": "3564"
+      }
+    ]
+  },
+  {
+    "quarter": "7th",
+    "dates": "July 1, 2014 – September 30, 2014",
+    "start": "3565",
+    "end": "4053",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "3565",
+        "end": "3638"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "3639",
+        "end": "3646"
+      },
+      {
+        "name": "DC Budget Request Acts",
+        "start": "3647",
+        "end": "3683"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "3684",
+        "end": "3913"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "3914",
+        "end": "4043"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "4044",
+        "end": "4053"
+      }
+    ]
+  },
+  {
+    "quarter": "8th",
+    "dates": "October 1, 2014 - December 31, 2014",
+    "start": "4054",
+    "end": "4774",
+    "parts": [
+      {
+        "name": "DC Laws",
+        "start": "4054",
+        "end": "4131"
+      },
+      {
+        "name": "DC Temporary Laws",
+        "start": "4132",
+        "end": "4141"
+      },
+      {
+        "name": "DC Emergency Acts",
+        "start": "4142",
+        "end": "4475"
+      },
+      {
+        "name": "DC Tax Revenue Anticipation Notes",
+        "start": "4476",
+        "end": "4497"
+      },
+      {
+        "name": "DC Resolutions",
+        "start": "4498",
+        "end": "4672"
+      },
+      {
+        "name": "DC Proposed Resolutions deemed approved or disapprove without Council action",
+        "start": "4673",
+        "end": "4774"
+      }
+    ]
+  }
+]

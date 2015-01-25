@@ -1,27 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Statutes at Large -- Council Period 20</h1>
   <div class="row">
-    <div class="c4">
+    <div class="col-sm-4">
       <h2>Look up a Measure</h2>
       <p><input id="id_measure_lookup" name="measure_lookup" placeholder="Lookup a Measure">
       <button type="button" id="lookup_button">Find it!</button></p>
       <h2>Go to a Page</h2>
       <p><input id="id_page_number" name="page_number" placeholder="Pick a page">
       <button type="button" id="go_button">Go!</button></p>
-      <h2>Search the Statutes at Large</h2>
-      <p><input id="id_search" name="search" placeholder="Search">
       <button type="button" id="search_button">Search</button></p>
     </div>
-    <div class="c8" id="response"></div>
+    <div class="col-sm-8" id="response"></div>
   </div>
 {% endblock %}
 {% block extra_js %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-        <script>
+<script>
 
 var url = "https://s3.amazonaws.com/dcstat/metadata.json";
 var d;
@@ -58,7 +52,7 @@ $("#search_button").on( "click", function(event) {
         out += "<li><a href='" + s3_url + elem.obj.name + "'>" + elem.obj.title + "</a></li>"
       })
       out += "</ul>"
-      $("#response").html(out)    
+      $("#response").html(out)
     })
     return false;
 });
@@ -87,5 +81,5 @@ url = "https://s3.amazonaws.com/dcstat/metadata.json"
   var diff = page + 1 - x.start;
   callback({"obj":x, "url":"https://s3.amazonaws.com/dcstat/public/" + x.name + "#page=" + diff})
 }
-        </script>
+</script>
 {% endblock %}
