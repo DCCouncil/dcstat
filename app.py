@@ -28,9 +28,10 @@ def home():
 
 @app.route('/browse')
 def browse():
-    measures = json.load(open('data/metadata.json','r'))
-    quarters = json.load(open('data/quarters.json','r'))
-    return render_template('browse.html', quarters=quarters, measures=measures)
+    # measures = json.load(open('data/metadata.json','r'))
+    # quarters = json.load(open('data/quarters.json','r'))
+    # return render_template('browse.html', quarters=quarters, measures=measures)
+    return render_template('browsestatic.html')
 
 @app.route('/search')
 def search():
