@@ -41,6 +41,9 @@ def search():
         results = json.loads(dumps(mongo.db.command('text', 'laws', search=q)['results']))
     return render_template('search.html', results=results)
 
+@app.route('/download')
+def download():
+    return render_template('download.html')
 
 @app.route('/view/<name>')
 def view(name=None):
