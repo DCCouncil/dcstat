@@ -1,54 +1,47 @@
-{% extends 'base.html' %}
-
-{% block extra_css %}
+{% extends 'base.html' %} {% block extra_css %}
 <style>
-.collapsibleList li{
-  list-style-image:url('/static/images/button.png');
-  cursor:auto;
+.collapsibleList li {
+    list-style-image: url('/static/images/button.png');
+    cursor: auto;
 }
-
-li.collapsibleListOpen{
-  list-style-image:url('/static/images/button-open.png');
-  cursor:pointer;
+li.collapsibleListOpen {
+    list-style-image: url('/static/images/button-open.png');
+    cursor: pointer;
 }
-
-li.collapsibleListClosed{
-  list-style-image:url('/static/images/button-closed.png');
-  cursor:pointer;
+li.collapsibleListClosed {
+    list-style-image: url('/static/images/button-closed.png');
+    cursor: pointer;
 }
-
-li.measure{
-  list-style-type:disc;
-  list-style-image: none;
-  cursor:pointer;
+li.measure {
+    list-style-type: disc;
+    list-style-image: none;
+    cursor: pointer;
 }
 </style>
-{% endblock %}
-
-{% block content %}
-
-{% for q in quarters %}
+{% endblock %} {% block content %} {% for q in quarters %}
 <h2>{{q.quarter}} Quarter ({{q.dates}})</h2>
 <ul class="collapsibleList">
-{% for p in q.parts %}
-<li>{{p.name}}
-<ul>
-{% for m in measures %}
-{% if m['start']|int >= p['start']|int and m['end']|int <= p['end']|int %}
-<li class="measure"><a href="https://s3.amazonaws.com/dcstat/public/{{m.name}}">{{m.name|replace("_", " ")|replace('.pdf','')}} - {{m.title}}</a></li>
-{% endif %}
-{% endfor %}
+    {% for p in q.parts %}
+    <li>{{p.name}}
+        <ul>
+          {% for m in measures %} 
+          {% if m['start']|int >= p['start']|int and m['end']|int <=p [ 'end']|int %} 
+          <li class="measure"><a href="https://s3.amazonaws.com/dcstat/public/{{m.name}}">{{m.name|replace("_", " ")|replace('.pdf','')}} - {{m.title}}</a>
+          </li>
+          {% endif %} 
+          {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
 </ul>
-{% endfor %}
-</ul>
-{% endfor %}
+{% endfor %} 
 {% endblock %}
 
 {% block extra_js %}
 <script src="/static/js/CollapsibleLists.js"></script>
 
 <script>
-$(document).ready(function (){
+$(document).ready(function() {
     CollapsibleLists.apply();
 })
 </script>

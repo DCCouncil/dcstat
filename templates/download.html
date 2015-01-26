@@ -1,43 +1,33 @@
-{% extends 'base.html' %}
-
-{% block extra_css %}
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block extra_css %} {% endblock %} {% block content %}
 <div class="row">
-<div class="col-sm-7">
-<h2>
-<a id="user-content-download-the-statutes-at-large" class="anchor" href="#download-the-statutes-at-large" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download the Statutes at Large</h2>
+    <div class="col-sm-7">
+        <h2><a id="user-content-download-the-statutes-at-large" class="anchor" href="#download-the-statutes-at-large" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download the Statutes at Large</h2>
 
-<dl>
-<dt>PDF</dt>
-<dd>A pdf of the Council Period 20 DCSTAT may <a href="/static/dcstat_20.pdf">be downloaded here</a>. The SHA256 value for the PDF file is `X`. 
-</dd>
-<dt>Zip of Individual Files</dt>
-<dd>A complete zip file of the Council Period 20 DCSTAT is <a href="/static/dcstat_20.zip">available for download</a>. The SHA256 value for the zip file is <code>7b2a31c72d86794930ad36b45c287f374898d70b9ab1453890e73f2096dce809</code>.</dd>
-</dl>
+        <dl>
+            <dt>PDF</dt>
+            <dd>A pdf of the Council Period 20 DCSTAT may <a href="/static/dcstat_20.pdf">be downloaded here</a>. The SHA256 value for the PDF file is `X`.
+            </dd>
+            <dt>Zip of Individual Files</dt>
+            <dd>A complete zip file of the Council Period 20 DCSTAT is <a href="/static/dcstat_20.zip">available for download</a>. The SHA256 value for the zip file is <code>7b2a31c72d86794930ad36b45c287f374898d70b9ab1453890e73f2096dce809</code>.</dd>
+        </dl>
 
-<h2>
-<a id="user-content-internet-archive-accessibility" class="anchor" href="#internet-archive-accessibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Internet Archive Accessibility</h2>
+        <h2><a id="user-content-internet-archive-accessibility" class="anchor" href="#internet-archive-accessibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Internet Archive Accessibility</h2>
 
-<p>As part of the Council's commitment to ensure that official electronic legal materials are preserved, the Council has uploaded the Council Period 20 DCSTAT (as well as historical versions from 1975 through 1986) to the <a href="https://archive.org">Internet Archive</a>. The files can be <a href="/">accessed here</a>.</p>
+        <p>As part of the Council's commitment to ensure that official electronic legal materials are preserved, the Council has uploaded the Council Period 20 DCSTAT (as well as historical versions from 1975 through 1986) to the <a href="https://archive.org">Internet Archive</a>. The files can be <a href="/">accessed here</a>.</p>
+    </div>
+    <div class="col-sm-5">
+        <h2><a id="user-content-authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h2>
+
+        <p>To ensure the authenticity of the documents included on this page, the Council is currently using two methods:</p>
+
+        <ol>
+            <li>
+                <strong>SSL/TLS</strong>. A secure method ensuring that transmission of website data requested by a user has not been changed.</li>
+            <li>
+                <strong>SHA Hash Values</strong>. Using a cryptographic algorithm (SHA-256), a unique value is calculated based on the contents of a particular file. If the file has been altered in any way, the computed value will be different.</li>
+        </ol>
+
+        <p>In the coming weeks, the Council will fully implement its new Authentication Service that will allow for Digital Signatures and will allow a user to upload a file to check whether the file is valid. </p>
+    </div>
 </div>
-<div class="col-sm-5">
-<h2>
-<a id="user-content-authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h2>
-
-<p>To ensure the authenticity of the documents included on this page, the Council is currently using two methods:</p>
-
-<ol>
-<li>
-<strong>SSL/TLS</strong>. A secure method ensuring that transmission of website data requested by a user has not been changed.</li>
-<li>
-<strong>SHA Hash Values</strong>. Using a cryptographic algorithm (SHA-256), a unique value is calculated based on the contents of a particular file. If the file has been altered in any way, the computed value will be different.</li>
-</ol>
-
-<p>In the coming weeks, the Council will fully implement its new Authentication Service that will allow for Digital Signatures and will allow a user to upload a file to check whether the file is valid. </p>
-</div>
-{% endblock %}
-
-{% block extra_js %}
-{% endblock %}
+    {% endblock %} {% block extra_js %} {% endblock %}

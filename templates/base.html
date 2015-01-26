@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="utf-8">
     <title>DC Statutes at Large</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="static/css/main.css">
-
-    {% block extra_css %}
-    {% endblock %}
+    <link rel="stylesheet" href="static/css/sticky-footer.css"> {% block extra_css %} {% endblock %}
 
     <script src="static/js/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-    
+
     <div class="jumbotron">
-      <div class="container">
-        <h1><a href="/">District of Columbia Statutes at Large</a></h1>
-        <p>The home of the official District of Columbia Statutes at Large.</p>
-        <div style="margin-top: 1.5em">
-          <a class="btn btn-primary" href="/browse">Browse the Statutes at Large &raquo;</a>
-          <a class="btn btn-primary" href="/search">Search the Statutes at Large &raquo;</a>
-          <a class="btn btn-primary" href="/download">Download the Statutes at Large &raquo;</a>
+        <div class="container">
+            <h1><a href="/">District of Columbia Statutes at Large</a></h1>
+            <p>The home of the official District of Columbia Statutes at Large.</p>
+            <div style="margin-top: 1.5em">
+                <a class="btn btn-primary" href="/browse">Browse the Statutes at Large &raquo;</a>
+                <a class="btn btn-primary" href="/search">Search the Statutes at Large &raquo;</a>
+                <a class="btn btn-primary" href="/download">Download the Statutes at Large &raquo;</a>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="container">
-{% block content %}
-
-{% endblock %}
+        {% block content %} {% endblock %}
     </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-        <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-
-        </script>
- {% block extra_js %}{% endblock %}
+    <footer class="footer">
+        <div class="container text-center">
+            All content contained on this site is available in the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public Domain</a>.
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+    {% block extra_js %}{% endblock %}
 </body>
+
 </html>

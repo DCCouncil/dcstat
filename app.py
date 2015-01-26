@@ -45,6 +45,10 @@ def search():
 def download():
     return render_template('download.html')
 
+@app.route('/developer')
+def developer():
+    return render_template('developer.html')
+
 @app.route('/view/<name>')
 def view(name=None):
     m = mongo.db.laws.find_one({"name":name + '.pdf'})
