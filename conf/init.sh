@@ -33,7 +33,6 @@ pip install -r requirements.txt
 # scp dcstat/dump/sal/laws.bson ubuntu@dcstat.dccode.gov:/home/council/dcstat/data/laws.bson
 # mongorestore --db sal data/laws.bson
 
-
 # Set up the uwsgi server
 pip install uwsgi
 
@@ -48,5 +47,3 @@ sudo cp ~/dcstat/conf/uwsgi.conf /etc/init/dcstat-uwsgi.conf
 sudo cp ~/dcstat/conf/uwsgi.ini /etc/dcstat-uwsgi/dcstat-uwsgi.ini
 
 sudo service dcstat-uwsgi start
-
-# uwsgi --http 0.0.0.0:5000 --home env --wsgi-file app.py --callable app --master
