@@ -57,7 +57,6 @@ def page(vol=20,page=None):
         if int(obj["end"]) >= int(page):
             diff = abs(int(page) + 1 - int(obj["start"]))
             url += obj["name"] + "#page=" + str(diff)
-            x
             return redirect(url)
     return redirect('/')
 
