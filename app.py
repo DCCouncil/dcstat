@@ -49,6 +49,18 @@ def download():
 def developer():
     return render_template('developer.html')
 
+@app.route('/page/<vol>/<page>')
+def page(vol=20,page=None):
+    m = json.load(open('data/metadata.json','r'))
+    url = "/public/"
+    for obj in m:
+        if int(obj["end"]) >= int(page):
+            diff = abs(int(page) + 1 - int(obj["start"]))
+            url += obj["name"] + "#page=" + str(diff)
+            x
+            return redirect(url)
+    return redirect('/')
+
 @app.route('/view/<name>')
 def view(name=None):
     m = mongo.db.laws.find_one({"name":name + '.pdf'})
@@ -60,7 +72,7 @@ def get(name=None):
     print m
     if m == None:
         return redirect('/')
-    return redirect('https://s3.amazonaws.com/dcstat/public/' + m["name"])
+    return redirect('/public/' + m["name"])
 
 @app.route('/api/search/')
 def api_search():
@@ -79,4 +91,4 @@ def api_measure(measure=None):
 
 port = int(os.environ.get('PORT', 5000))
 if __name__ == '__main__':
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=True, port=port, host='0.0.0.0')

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install python and dependencies
-sudo apt-get install build-essential python-dev python-pip
+sudo apt-get install -y build-essential python-dev python-pip libssl-dev
 
 # Install git and get the DC Stat
 sudo apt-get update
@@ -23,14 +23,14 @@ cd nginx-ssl
 sudo bash bootstrap.sh -p 4000 -s dcstat.dccode.gov
 
 # Initialize the Flask App
-pip install virtualenv
+sudo apt-get install python-pip
 cd ~/dcstat
-virtualenv -p python2.7 env
+sudo virtualenv -p python2.7 env
 source env/bin/activate
 pip install -r requirements.txt
 
 # After init is done, from local system laws.bson
-# scp dcstat/dump/sal/laws.bson council@dcstat.dccode.gov:/home/council/dcstat/data/laws.bson
+# scp dcstat/dump/sal/laws.bson ubuntu@dcstat.dccode.gov:/home/council/dcstat/data/laws.bson
 # mongorestore --db sal data/laws.bson
 
 
@@ -40,8 +40,8 @@ pip install uwsgi
 # Create directories
 sudo mkdir /var/run/dcstat
 sudo mkdir /var/log/dcstat-uwsgi
-sudo chown council:council /var/run/dcstat
-sudo chown council:council /var/log/dcstat-uwsgi
+sudo chown ubuntu:ubuntu /var/run/dcstat
+sudo chown ubuntu:ubuntu /var/log/dcstat-uwsgi
 sudo mkdir /etc/dcstat-uwsgi
 
 sudo cp ~/dcstat/conf/uwsgi.conf /etc/init/dcstat-uwsgi.conf

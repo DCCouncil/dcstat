@@ -15,7 +15,7 @@
         <div id="response">
             <ul>
                 {% for r in results %}
-                <li><a href="https://s3.amazonaws.com/dcstat/public/{{r.obj.name}}">{{r.obj.title}}</a>
+                <li><a href="/public/{{r.obj.name}}">{{r.obj.title}}</a>
                 </li>
                 {% endfor %}
             </ul>
