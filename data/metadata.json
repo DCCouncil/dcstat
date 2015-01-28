@@ -6319,60 +6319,60 @@
   }, 
   {
     "start": "3249", 
-    "end": "3258", 
+    "end": "3259", 
     "name": "Law_20-109.pdf", 
     "title": "Condominium Amendment Act of 2014"
   }, 
   {
-    "start": "3259", 
-    "end": "3269", 
+    "start": "3260", 
+    "end": "3270", 
     "name": "Law_20-110.pdf", 
     "title": "Skyland Town Center Omnibus Act of 2014"
   }, 
   {
-    "start": "3270", 
-    "end": "3275", 
+    "start": "3271", 
+    "end": "3276", 
     "name": "Law_20-114.pdf", 
     "title": "Comprehensive Planning and Utilization of School Facilities Amendment Act of 2014"
   }, 
   {
-    "start": "3276", 
-    "end": "3282", 
+    "start": "3277", 
+    "end": "3283", 
     "name": "Law_20-117.pdf", 
     "title": "Fiscal Year 2014 Budget Support Technical Clarification Amendment Act of 2014"
   }, 
   {
-    "start": "3283", 
-    "end": "3284", 
+    "start": "3284", 
+    "end": "3285", 
     "name": "Law_20-103.pdf", 
     "title": "Vending Regulations Temporary Amendment Act of 2014"
   }, 
   {
-    "start": "3285", 
-    "end": "3286", 
+    "start": "3286", 
+    "end": "3287", 
     "name": "Law_20-104.pdf", 
     "title": "Classroom Animal for Educational Purposes Clarification Temporary Amendment Act of 2014"
   }, 
   {
-    "start": "3287", 
-    "end": "3287", 
+    "start": "3288", 
+    "end": "3288", 
     "name": "Law_20-111.pdf", 
     "title": "Driver's Safety Clarification Temporary Amendment Act of 2014"
   }, 
   {
-    "start": "3288", 
-    "end": "3291", 
+    "start": "3289", 
+    "end": "3292", 
     "name": "Law_20-112.pdf", 
     "title": "Transportation Infrastructure Mitigation Clarification Temporary Amendment Act of 2014"
   }, 
   {
-    "start": "3292", 
-    "end": "3292", 
+    "start": "3293", 
+    "end": "3293", 
     "name": "Law_20-113.pdf", 
     "title": "Department of Parks and Recreation Fee-based Use Permit Authority Clarification Temporary Amendment Act of 2014"
   }, 
   {
-    "start": "3293", 
+    "start": "3294", 
     "end": "3294", 
     "name": "Law_20-115.pdf", 
     "title": "Kelsey Gardens Redevelopment Temporary Act of 2014"
@@ -8137,15 +8137,9 @@
   }, 
   {
     "start": "4031", 
-    "end": "4030", 
+    "end": "4031", 
     "name": "Resolution_20-597.pdf", 
     "title": "5201 Hayes Street, N.E., Surplus Property Declaration Resolution of 2014"
-  }, 
-  {
-    "start": "4031", 
-    "end": "4031", 
-    "name": "Proposed_Resolution_20-782.pdf", 
-    "title": "Data-sharing Regulations Approval Resolution of 2014"
   }, 
   {
     "start": "4032", 
@@ -8203,9 +8197,15 @@
   }, 
   {
     "start": "4043", 
-    "end": "4044", 
+    "end": "4043", 
     "name": "Resolution_20-608.pdf", 
     "title": "District of Columbia Water and Sewer Authority Board of Directors Matthew T. Brown Confirmation Resolution of 2014"
+  }, 
+  {
+    "start": "4044", 
+    "end": "4044", 
+    "name": "Proposed_Resolution_20-782.pdf", 
+    "title": "Data-sharing Regulations Approval Resolution of 2014"
   }, 
   {
     "start": "4045", 
@@ -9913,7 +9913,7 @@
   }, 
   {
     "start": "4774", 
-    "end": "4774", 
+    "end": 4774, 
     "name": "Proposed_Resolution_20-1112.pdf", 
     "title": "Board of Dentistry Dianne J. Smith Confirmation Resolution of 2014"
   }

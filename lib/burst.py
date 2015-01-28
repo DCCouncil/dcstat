@@ -43,20 +43,21 @@ for (i, doc) in enumerate(sortedlist):
 
         import os.path
         if not os.path.isfile(fname.strip()):
-
+            if start > end:
+                print "Hey, there's a problem with: " + fname.strip()
             from subprocess import call #shell out to pdftk
-            # call("pdftk " + " ".join(page_range) + " cat  output " + fname.strip(), shell=True)
-            # print "Printing " + fname.strip() + "--" + str(start) + ":" + str(end) 
+            call("pdftk " + " ".join(page_range) + " cat  output tmp/" + fname.strip(), shell=True)
+            print "Printing " + fname.strip() + "--" + str(start) + ":" + str(end) 
 
         sal_data.append({"name":fname.strip(), "title":current[0].replace('"',"").strip(), "start": str(start), "end": str(int(end) - 1)})
 
     else:   # if we're here, we're on the last document
         start = int(doc[3].replace('"',"")) #get the current document's page number
-        end = 'END' # Go to the end
+        end = start # Go to the end
         fname = doc[4].replace('"',"") + ".pdf" #get the current document's title
 
-        # call(["pdftk " ,"cat","output",fname.strip()])         #shell out to pdftk
+        call(["pdftk pgs/pg_4778.pdf cat output tmp/" + fname.strip()], shell=True)         #shell out to pdftk
         sal_data.append({"name":fname.strip(), "title":doc[0].replace('"',"").strip(), "start": str(start), "end": end})
 
-with open('metadata.json', 'w') as f:
+with open('data/metadata.json', 'w') as f:
     f.write(json.dumps(sal_data, indent=2))

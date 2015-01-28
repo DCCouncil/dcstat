@@ -5,7 +5,7 @@ from subprocess import call
 import tempfile
 import os
 
-with open('metadata.json', 'r') as fp:
+with open('data/metadata.json', 'r') as fp:
     d = json.load(fp)
 
 for m in d:

@@ -4,14 +4,28 @@
     <meta charset="utf-8">
     <title>DC Statutes at Large</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/sticky-footer.css">
-    {% block extra_css %}
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/sticky-footer.css">
+    {% block opengraph %}
+    <meta property="og:title" content="DC Statutes at Large">
+    <meta property="og:site_name" content="District of Columbia Statutes at Large">
+    <meta property="og:url" content="https://dcstat.dccode.gov">
+    <meta property="og:description" content="The DC Statutes at Large includes, in chronological order, all Council acts and resolutions that became law during a Council period.">
+    <meta property="og:image" content="https://dccode.gov/static/images/seal.png">
     {% endblock %}
 
-    <script src="static/js/modernizr-2.8.3.min.js"></script>
+    {% block extra_css %}
+    <meta property="og:title" content="DC Statutes at Large">
+    <meta property="og:site_name - District of Columbia Statutes at Large">
+    <meta property="og:url" content="https://dcstat.dccode.gov">
+    <meta property="og:description" content="The DC Statutes at Large includes, in chronological order, all Council acts and resolutions that became law during a Council period.">
+    <meta property="og:image" content="https://dccode.gov/static/images/seal.png">
+    {% endblock %}
+
+    <script src="/static/js/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -43,7 +57,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-        <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script>
 
         </script>
