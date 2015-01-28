@@ -1,0 +1,41 @@
+<h2 id="page"><a name="user-content-page" href="#page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/page</h2>
+<h4 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h4>
+<p><code>/page/:councilperiod/:page</code></p>
+<h4 id="example"><a name="user-content-example" href="#example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h4>
+<p><a href="https://dcstat.dccode.gov/page/20/187">https://dcstat.dccode.gov/page/20/187</a></p>
+<h4 id="description"><a name="user-content-description" href="#description" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Description</h4>
+<p>Redirects the user to a page in the DCSTAT. [Note: Only Council Period 20 works at the moment.]</p>
+<h2 id="get"><a name="user-content-get" href="#get" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/get</h2>
+<h4 id="parameters_1"><a name="user-content-parameters_1" href="#parameters_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h4>
+<p><code>/get/:measure.pdf</code></p>
+<h4 id="example_1"><a name="user-content-example_1" href="#example_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h4>
+<p><a href="https://dcstat.dccode.gov/get/Law_19-239">https://dcstat.dccode.gov/get/Law_19-239</a></p>
+<h4 id="description_1"><a name="user-content-description_1" href="#description_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Description</h4>
+<p>Redirects the user to a measure in the DCSTAT, given the measure&rsquo;s citation. There are four types:</p>
+<ul>
+<li>Law</li>
+<li>Act</li>
+<li>Resolution</li>
+<li>Proposed_Resolution</li>
+</ul>
+<h2 id="search"><a name="user-content-search" href="#search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/search</h2>
+<h4 id="parameters_2"><a name="user-content-parameters_2" href="#parameters_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h4>
+<p><code>/search?q=&lt;query&gt;</code></p>
+<h4 id="example_2"><a name="user-content-example_2" href="#example_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h4>
+<p><a href="https://dcstat.dccode.gov/search?q=%22No%20Taxation%20Without%20Representation%22">https://dcstat.dccode.gov/search?q=%22No%20Taxation%20Without%20Representation%22</a></p>
+<h4 id="description_2"><a name="user-content-description_2" href="#description_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Description</h4>
+<p>Returns the search page with the desired search query.</p>
+<h2 id="apisearch"><a name="user-content-apisearch" href="#apisearch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/api/search</h2>
+<h4 id="parameters_3"><a name="user-content-parameters_3" href="#parameters_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h4>
+<p><code>/api/search?q=&lt;query&gt;</code></p>
+<h4 id="example_3"><a name="user-content-example_3" href="#example_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h4>
+<p><a href="https://dcstat.dccode.gov/api/search/?q=%22Flag%20Amendment%22">https://dcstat.dccode.gov/api/search/?q=%22Flag%20Amendment%22</a></p>
+<h4 id="description_3"><a name="user-content-description_3" href="#description_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Description</h4>
+<p>Returns a JSON object of search results for a given search query.</p>
+<h2 id="apimeasures"><a name="user-content-apimeasures" href="#apimeasures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>/api/measures</h2>
+<h4 id="parameters_4"><a name="user-content-parameters_4" href="#parameters_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h4>
+<p><code>/api/measures/:measure</code></p>
+<h4 id="example_4"><a name="user-content-example_4" href="#example_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h4>
+<p><a href="https://dcstat.dccode.gov/api/measures/Law_19-239/">https://dcstat.dccode.gov/api/measures/Law_19-239/</a></p>
+<h4 id="description_4"><a name="user-content-description_4" href="#description_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Description</h4>
+<p>Returns a JSON object with a measure&rsquo;s metadata, including full-text of the measure.  </p>

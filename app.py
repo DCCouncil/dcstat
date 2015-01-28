@@ -82,9 +82,7 @@ def api_search():
 
 @app.route('/api/measures/<measure>/')
 def api_measure(measure=None):
-    # print measure
     measure = measure + '.pdf'
-    print measure
     m = dumps(mongo.db.laws.find_one({'name':measure}))
     return m
 
