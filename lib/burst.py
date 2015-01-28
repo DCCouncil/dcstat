@@ -49,7 +49,7 @@ for (i, doc) in enumerate(sortedlist):
             call("pdftk " + " ".join(page_range) + " cat  output tmp/" + fname.strip(), shell=True)
             print "Printing " + fname.strip() + "--" + str(start) + ":" + str(end) 
 
-        sal_data.append({"name":fname.strip(), "title":current[0].replace('"',"").strip(), "start": str(start), "end": str(int(end) - 1)})
+        sal_data.append({"name":fname.strip(), "title":current[0].replace('"',"").strip(), "start": str(start), "end": str(int(end) - 1), "council_period": 20})
 
     else:   # if we're here, we're on the last document
         start = int(doc[3].replace('"',"")) #get the current document's page number
@@ -57,7 +57,7 @@ for (i, doc) in enumerate(sortedlist):
         fname = doc[4].replace('"',"") + ".pdf" #get the current document's title
 
         call(["pdftk pgs/pg_4778.pdf cat output tmp/" + fname.strip()], shell=True)         #shell out to pdftk
-        sal_data.append({"name":fname.strip(), "title":doc[0].replace('"',"").strip(), "start": str(start), "end": end})
+        sal_data.append({"name":fname.strip(), "title":doc[0].replace('"',"").strip(), "start": str(start), "end": end, "council_period": 20})
 
 with open('data/metadata.json', 'w') as f:
     f.write(json.dumps(sal_data, indent=2))

@@ -16,6 +16,7 @@ for m in d:
     # fname = 'compress/Act_19-584.pdf'
 
     out = {}
+    out["volume"] = m["volume"]
     out["title"] = m["title"]
     out["start"] = m["start"]
     out["end"] = m["end"]
